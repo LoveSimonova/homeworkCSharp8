@@ -31,14 +31,13 @@ int[,,] GetMass(int rows, int columns,int height)
         {
             int num=rnd.Next(10,99);
             if(count!=0)
-            for(int k=0;k<count;k++)
-                if(num==formas[k])
-                {
-                    equal=true;
-                }           
+                for(int k=0;k<count;k++)
+                    if(num==formas[k])
+                    {
+                        equal=true;
+                    }           
             if(equal)
             {
-                count--;
                 if(z>0)
                     z--;
                 else
@@ -48,15 +47,15 @@ int[,,] GetMass(int rows, int columns,int height)
                     else
                         i--;
                 }
+                equal=false;
             }
             else
             {
                 formas[count]=num;
-                count++;    
-                   
+                count++;                     
                 massive[i,j,z]=num;
             }
-            Console.WriteLine(""+count+" "+i+" "+j+" "+z);
+            //Console.WriteLine(""+count+" "+i+" "+j+" "+z);
 
         }
         //Console.WriteLine();
