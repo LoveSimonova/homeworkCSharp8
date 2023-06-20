@@ -8,32 +8,34 @@ int[,] GetMass()
     int c=1;
     int col=massive.GetLength(1);
     int rows=massive.GetLength(0);
-    while(
-c!=16
-    ){
-        for(int i=0;i<col;i++)
-    {
-        massive[count,i]=c;
-        c++;
-    }
-    for(int j=1;j<rows;j++)
-    {
-        massive[j,col-(count*1)]=c;
-        c++;
-    
-    }
-    for(int i=col-2;i==0;i--)
-    {
-        massive[rows-(count*1),i]=c;
-        c++;
-    }
-    for(int i=rows-2;i==1;i--)
-    {
-        massive[i,count]=c;
-        c++;
-    }
-    count++;
-    }
+    while(c<17){
+        for(int i=count;i<col;i++)
+        {
+            massive[count,i]=c;
+            c++;
+        }
+        
+        for(int j=1+count;j<rows;j++)
+        {
+            massive[j,col-1]=c;
+            c++;
+        
+        }
+        for(int i=col-2;i>=count;i--)
+        {
+            massive[rows-1,i]=c;
+            c++;
+        }
+        for(int i=rows-2;i>=(count+1);i--)
+        {
+            massive[i,count]=c;
+            c++;
+        }
+        count++;
+        rows--;
+        col--;
+        
+        }
     return massive;
 }
 
