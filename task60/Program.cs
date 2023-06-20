@@ -20,7 +20,7 @@ int GetHeight()
 int[,,] GetMass(int rows, int columns,int height)
 {
     int[,,] massive = new int[rows,columns,height];
-    int[] formas = new int[rows*columns*height];
+    int[] formas = new int[(rows+1)*(columns+1)*(height+1)];
     int count=0;
     Random rnd = new Random();
     bool equal=false;
@@ -55,8 +55,6 @@ int[,,] GetMass(int rows, int columns,int height)
                 count++;                     
                 massive[i,j,z]=num;
             }
-            //Console.WriteLine(""+count+" "+i+" "+j+" "+z);
-
         }
         //Console.WriteLine();
     }
